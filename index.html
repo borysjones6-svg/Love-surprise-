@@ -1,0 +1,1221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10070f">
+<title>For Nellie ❤️ | A Little Surprise</title>
+
+<style>
+:root {
+    --bg: #10070f;
+    --surface: #1c101b;
+    --surface2: #281321;
+    --gold: #ffd778;
+    --pink: #ff5488;
+    --white: #fff5fa;
+    --muted: #cbb7c5;
+    --border: #ffd77840;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 25px;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--white);
+    background:
+        radial-gradient(ellipse at 50% -15%, #70244960, transparent 55%),
+        radial-gradient(ellipse at 100% 45%, #6b17401a, transparent 40%),
+        var(--bg);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 22px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    z-index: 5;
+}
+
+.brand {
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: var(--gold);
+}
+
+.brand span {
+    color: var(--pink);
+}
+
+.top-note {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 105px 20px 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    isolation: isolate;
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    filter: blur(85px);
+    opacity: .17;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero::before {
+    background: var(--pink);
+    top: 15%;
+    left: -120px;
+}
+
+.hero::after {
+    background: var(--gold);
+    right: -140px;
+    bottom: 10%;
+}
+
+.eyebrow,
+.section-label {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero-heart {
+    font-size: clamp(65px, 16vw, 105px);
+    margin: 28px 0 20px;
+    filter: drop-shadow(0 0 28px #ff548860);
+    animation: heartBeat 1.8s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.12); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.07); }
+}
+
+.hero h1 {
+    max-width: 850px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(48px, 12vw, 100px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    color: var(--white);
+}
+
+.hero h1 span {
+    display: block;
+    margin-top: 9px;
+    background: linear-gradient(100deg, #fff0bc, var(--gold), #ff8cae);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-description {
+    max-width: 520px;
+    margin: 25px auto;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.primary-btn {
+    min-height: 48px;
+    padding: 14px 23px;
+    border: 1px solid #fff0bb80;
+    border-radius: 50px;
+    color: #21101a;
+    background: linear-gradient(120deg, var(--gold), #ff9ebd);
+    font-weight: 800;
+    box-shadow: 0 8px 30px #ff54882b;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px #ff548850;
+}
+
+.secondary-btn {
+    min-height: 44px;
+    padding: 11px 17px;
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    color: var(--white);
+    background: #ffffff08;
+    transition: background .2s, transform .2s;
+}
+
+.secondary-btn:hover {
+    background: #ffd77816;
+    transform: translateY(-2px);
+}
+
+.scroll-hint {
+    margin-top: 45px;
+    color: #a992a2;
+    font-size: 11px;
+    letter-spacing: 2px;
+    animation: hintFloat 2s ease-in-out infinite;
+}
+
+@keyframes hintFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+section {
+    width: min(100% - 32px, 1050px);
+    margin: 0 auto;
+    padding: 75px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    margin-top: 13px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(30px, 7vw, 46px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.section-description {
+    max-width: 600px;
+    margin: 14px auto 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.glass-card {
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    background: linear-gradient(145deg, #ffffff0b, #ffffff03);
+    box-shadow: 0 20px 65px #0004;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.gallery-card {
+    max-width: 780px;
+    margin: auto;
+    padding: 15px;
+}
+
+.photo-frame {
+    width: 100%;
+    height: min(65svh, 590px);
+    min-height: 270px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 17px;
+    background: #0b060b;
+    border: 1px solid #ffd77830;
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity .3s, transform .4s;
+}
+
+.photo-frame img.changing {
+    opacity: .25;
+}
+
+.photo-caption {
+    min-height: 42px;
+    display: grid;
+    place-items: center;
+    padding: 12px 5px 3px;
+    color: var(--white);
+    line-height: 1.7;
+}
+
+.photo-count {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 6px 0 13px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.gallery-strip {
+    display: flex;
+    gap: 9px;
+    overflow-x: auto;
+    padding: 15px 1px 5px;
+    scrollbar-width: thin;
+    scrollbar-color: #805269 transparent;
+}
+
+.gallery-thumb {
+    flex: 0 0 62px;
+    height: 68px;
+    padding: 0;
+    overflow: hidden;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: var(--surface);
+}
+
+.gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-thumb.active {
+    border-color: var(--gold);
+    box-shadow: 0 0 15px #ffd77840;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.video-box {
+    min-width: 0;
+    padding: 13px;
+}
+
+.video-box video {
+    width: 100%;
+    display: block;
+    border-radius: 13px;
+    background: #000;
+}
+
+.video-box p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 12px 3px 2px;
+}
+
+.music-card,
+.secret-box {
+    width: min(100%, 490px);
+    margin: auto;
+    padding: 26px 20px;
+    text-align: center;
+}
+
+.music-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+    animation: heartBeat 2s infinite;
+}
+
+.music-title {
+    color: var(--gold);
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.music-status {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+    margin-top: 13px;
+}
+
+.letter {
+    max-width: 720px;
+    margin: auto;
+    padding: clamp(20px, 5vw, 38px);
+    color: #f7e8f0;
+    font-size: 15px;
+    line-height: 2;
+    text-align: left;
+    border: 1px solid #ffd77870;
+    border-radius: 23px;
+    background: linear-gradient(145deg, #301525, #190d18);
+    box-shadow: 0 20px 60px #0004;
+    animation: reveal .5s ease;
+}
+
+.letter h3,
+.secret-message h3 {
+    text-align: center;
+    color: var(--gold);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.letter p + p {
+    margin-top: 14px;
+}
+
+.secret-box {
+    border: 1px dashed #ff8cab90;
+    background:
+        radial-gradient(ellipse at top, #61203e50, transparent 70%),
+        #180b14;
+}
+
+.secret-message {
+    margin-top: 20px;
+    line-height: 1.9;
+    color: var(--light-pink, #ffe5ed);
+    animation: reveal .5s ease;
+}
+
+.secret-message p + p {
+    margin-top: 12px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.final-card {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.final-heart {
+    font-size: 55px;
+    margin-bottom: 17px;
+}
+
+.final-card p {
+    max-width: 500px;
+    margin: 15px auto 22px;
+    color: var(--muted);
+    line-height: 1.9;
+}
+
+footer {
+    padding: 35px 18px 45px;
+    text-align: center;
+    color: #a992a2;
+    font-size: 12px;
+    line-height: 2;
+}
+
+footer span {
+    color: var(--gold);
+}
+
+#toast {
+    position: fixed;
+    z-index: 50;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: calc(100% - 30px);
+    padding: 13px 19px;
+    border: 1px solid var(--gold);
+    border-radius: 30px;
+    background: #2b1425;
+    color: white;
+    font-size: 13px;
+    box-shadow: 0 8px 30px #0008;
+}
+
+.floating-heart {
+    position: fixed;
+    bottom: -35px;
+    z-index: 40;
+    pointer-events: none;
+    animation: floatUp 3s ease-out forwards;
+}
+
+@keyframes floatUp {
+    to {
+        opacity: 0;
+        transform: translateY(-100svh) rotate(35deg);
+    }
+}
+
+@media (max-width: 650px) {
+    .topbar {
+        padding: 18px;
+    }
+
+    .brand {
+        font-size: 12px;
+    }
+
+    .top-note {
+        font-size: 10px;
+    }
+
+    .hero {
+        padding-inline: 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1.5px;
+    }
+
+    section {
+        width: calc(100% - 24px);
+        padding: 53px 0;
+    }
+
+    .gallery-card {
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .photo-frame {
+        min-height: 240px;
+        height: 54svh;
+        border-radius: 14px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .music-card,
+    .secret-box {
+        padding: 23px 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <a href="#top" class="brand">J<span>♥</span>N</a>
+    <div class="top-note">A little surprise for Nellie</div>
+</div>
+
+<header class="hero" id="top">
+    <div class="eyebrow">Made with a little extra love</div>
+
+    <div class="hero-heart" aria-hidden="true">❤️</div>
+
+    <h1>
+        Hey, Nellie
+        <span>This Is For You.</span>
+    </h1>
+
+    <p class="hero-description">
+        A little corner of the internet filled with memories,
+        music, and a surprise made especially for you.
+        Take a moment and explore. 💗
+    </p>
+
+    <button class="primary-btn" onclick="discoverSurprise()">
+        Discover Your Surprise ✨
+    </button>
+
+    <div class="scroll-hint">SCROLL TO EXPLORE ↓</div>
+</header>
+
+
+<main>
+
+<!-- PHOTO GALLERY -->
+<section id="memories">
+    <div class="section-heading">
+        <div class="section-label">Our Little Moments</div>
+        <h2>A Gallery of Memories 📸</h2>
+        <p class="section-description">
+            Every picture tells a story. Here are a few moments worth keeping.
+        </p>
+    </div>
+
+    <div class="glass-card gallery-card">
+        <div class="photo-frame">
+            <img
+                id="slide"
+                src="Images/IMG-20261007-WA0051.jpg"
+                alt="A special memory"
+            >
+        </div>
+
+        <div class="photo-caption" id="caption" aria-live="polite">
+            A little moment worth remembering ❤️
+        </div>
+
+        <div class="photo-count" id="photoCount">Photo 1</div>
+
+        <div class="controls">
+            <button class="secondary-btn" onclick="previousPhoto()">
+                ← Previous
+            </button>
+
+            <button
+                class="secondary-btn"
+                id="slideshowButton"
+                onclick="toggleSlideshow()"
+            >
+                ⏸ Pause
+            </button>
+
+            <button class="secondary-btn" onclick="nextPhoto()">
+                Next →
+            </button>
+        </div>
+
+        <div
+            class="gallery-strip"
+            id="galleryStrip"
+            aria-label="Choose a photo"
+        ></div>
+    </div>
+</section>
+
+<!-- VIDEO MEMORIES -->
+<section id="videos">
+    <div class="section-heading">
+        <div class="section-label">Moments in Motion</div>
+        <h2>Memories That Move 🎬</h2>
+        <p class="section-description">
+            Some moments deserve more than a photograph.
+        </p>
+    </div>
+
+    <div class="video-grid">
+        <div class="glass-card video-box">
+            <video controls playsinline preload="metadata">
+                <source src="videos/our-memory.mp4" type="video/mp4">
+                Your browser does not support video playback.
+            </video>
+            <p>One for the memory book ❤️</p>
+        </div>
+
+        <div class="glass-card video-box">
+            <video controls playsinline preload="metadata">
+                <source src="videos/our-memory%20(1).mp4" type="video/mp4">
+                Your browser does not support video playback.
+            </video>
+            <p>Another little moment ✨</p>
+        </div>
+    </div>
+</section>
+
+<!-- FAVOURITE SONG -->
+<section id="music">
+    <div class="section-heading">
+        <div class="section-label">Press Play on a Memory</div>
+        <h2>Your Favourite Song 🎶</h2>
+        <p class="section-description">
+            Let the music set the mood while you explore your surprise.
+        </p>
+    </div>
+
+    <div class="glass-card music-card">
+        <div class="music-icon" aria-hidden="true">🎧💗</div>
+
+        <h3 class="music-title">Our Little Soundtrack</h3>
+
+        <p class="section-description">
+            A song to make this moment feel a little more special.
+        </p>
+
+        
+<audio
+    id="backgroundMusic"
+    autoplay
+    loop
+    preload="auto"
+    playsinline
+
+    <source src="music/our-song.mp3" type="audio/mpeg">
+    Your browser does not support audio playback.
+</audio>
+
+<button
+    class="primary-btn"
+    id="musicButton"
+    onclick="toggleMusic()"
+    ▶ Play Music 🎶
+</button>
+
+<p class="music-status" id="musicStatus" role="status" aria-live="polite">
+    Trying to start your song...
+</p>
+
+    </div>
+</section>
+
+<!-- LOVE LETTER -->
+<section id="letter">
+    <div class="section-heading">
+        <div class="section-label">Words From the Heart</div>
+        <h2>A Little Letter for You 💌</h2>
+        <p class="section-description">
+            Some things are better said from the heart.
+        </p>
+    </div>
+
+    <div style="text-align:center; margin-bottom:22px;">
+        <button
+            class="primary-btn"
+            id="letterButton"
+            onclick="revealLetter()"
+        >
+            Open Your Letter 💌
+        </button>
+    </div>
+
+    <article class="letter hidden" id="loveLetter">
+        <h3>Dear Nellie ❤️</h3>
+
+        <p>
+            I wanted to create something a little different,
+            something that could bring a little happiness to your day.
+        </p>
+
+        <p>
+            I appreciate your smile, your humour, your personality,
+            and those little things that make you uniquely you.
+            Sometimes, the smallest moments become our favourite memories.
+        </p>
+
+        <p>
+            This little surprise comes with no pressure and no expectations.
+            Your feelings matter, and I respect your space and your choices.
+        </p>
+
+        <p>
+            Whatever tomorrow brings, I hope life gives you plenty of
+            reasons to laugh, feel appreciated, and create beautiful memories.
+        </p>
+
+        <p>
+            P.S. If this made you smile even once, then my little mission
+            is accomplished. 😄💗
+        </p>
+
+        <p style="text-align:right; color:var(--gold);">
+            Made with care, just for you. ❤️
+        </p>
+    </article>
+</section>
+
+<!-- SECRET SURPRISE -->
+<section id="secret">
+    <div class="section-heading">
+        <div class="section-label">Just Between These Pixels</div>
+        <h2>One Tiny Secret 🤫</h2>
+        <p class="section-description">
+            There's one more little surprise waiting for you.
+        </p>
+    </div>
+
+    <div class="glass-card secret-box">
+        <div style="font-size:52px; margin-bottom:15px;" aria-hidden="true">
+            🎁💗
+        </div>
+
+        <button
+            class="primary-btn"
+            id="secretButton"
+            onclick="revealSecret()"
+        >
+            Unlock Your Secret 💌
+        </button>
+
+        <div class="secret-message hidden" id="secretMessage">
+            <h3>A Little Reminder, Nellie ❤️</h3>
+
+            <p>
+                You deserve kindness, genuine laughter, respect,
+                and people who appreciate you for who you are.
+            </p>
+
+            <p>
+                Keep being yourself, keep growing, and keep collecting
+                beautiful moments. Surprise unlocked! ✨
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL SURPRISE -->
+<section id="final">
+    <div class="glass-card final-card">
+        <div class="final-heart" aria-hidden="true">💗</div>
+
+        <div class="section-label">One Last Thing</div>
+
+        <h2>Sending You Some Love</h2>
+
+        <p>
+            A little website, a few memories, and a thoughtful surprise
+            made to brighten your day.
+        </p>
+
+        <button class="primary-btn" onclick="sendLove()">
+            Send Some Love ❤️
+        </button>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    Created with <span>❤️</span> and a little bit of magic.<br>
+    A special surprise for Nellie.
+</footer>
+
+<div id="toast" class="hidden" role="status" aria-live="polite"></div>
+
+
+<script>
+
+/* =====================================
+   JONES TECHNOLOGY LOVE SURPRISE
+   CORRECTED WEBSITE JAVASCRIPT
+===================================== */
+
+/* 1. WEBSITE ELEMENTS */
+
+const backgroundMusic = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+const musicStatus = document.getElementById("musicStatus");
+const slide = document.getElementById("slide");
+const caption = document.getElementById("caption");
+const photoCount = document.getElementById("photoCount");
+const galleryStrip = document.getElementById("galleryStrip");
+const loveLetter = document.getElementById("loveLetter");
+const toast = document.getElementById("toast");
+
+let currentPhoto = 0;
+let slideshowTimer = null;
+let toastTimer = null;
+
+/* 2. PHOTO GALLERY */
+
+const photos = [
+    "Images/IMG-20261007-WA0051.jpg",
+    "Images/IMG-20261008-WA0007.jpg",
+    "Images/IMG-20261008-WA0008.jpg",
+    "Images/IMG-20261008-WA0009.jpg",
+    "Images/IMG-20261008-WA0010.jpg",
+    "Images/IMG-20261008-WA0011.jpg",
+    "Images/IMG-20261008-WA0013.jpg",
+    "Images/IMG-20261008-WA0015.jpg",
+    "Images/IMG-20261008-WA0016.jpg",
+    "Images/IMG-20261008-WA0019.jpg",
+    "Images/nellie1.jpg",
+    "Images/nellie2.jpg",
+    "Images/nellie3.jpg"
+];
+
+function buildGallery() {
+    if (!galleryStrip) return;
+
+    galleryStrip.innerHTML = "";
+
+    photos.forEach((photo, index) => {
+        const thumbnail = document.createElement("img");
+
+        thumbnail.src = photo;
+        thumbnail.alt = "Memory " + (index + 1);
+        thumbnail.loading = "lazy";
+        thumbnail.className = "gallery-thumbnail";
+
+        thumbnail.addEventListener("click", () => {
+            showPhoto(index);
+        });
+
+        galleryStrip.appendChild(thumbnail);
+    });
+}
+
+function showPhoto(index) {
+    if (!slide || photos.length === 0) return;
+
+    currentPhoto = (index + photos.length) % photos.length;
+
+    slide.src = photos[currentPhoto];
+    slide.alt = "Our memory " + (currentPhoto + 1);
+
+    if (caption) {
+        caption.textContent =
+            "Memory " + (currentPhoto + 1) +
+            " of our special moments ❤️";
+    }
+
+    if (photoCount) {
+        photoCount.textContent =
+            (currentPhoto + 1) + " / " + photos.length;
+    }
+
+    if (galleryStrip) {
+        const thumbnails =
+            galleryStrip.querySelectorAll("img");
+
+        thumbnails.forEach((thumbnail, i) => {
+            thumbnail.classList.toggle(
+                "active",
+                i === currentPhoto
+            );
+        });
+    }
+}
+
+function nextPhoto() {
+    showPhoto(currentPhoto + 1);
+}
+
+function previousPhoto() {
+    showPhoto(currentPhoto - 1);
+}
+
+/* Alternative names for existing HTML buttons */
+
+function prevPhoto() {
+    previousPhoto();
+}
+
+/* 3. AUTOMATIC SLIDESHOW */
+
+function startSlideshow() {
+    stopSlideshow();
+
+    slideshowTimer = window.setInterval(() => {
+        nextPhoto();
+    }, 4000);
+}
+
+function stopSlideshow() {
+    if (slideshowTimer !== null) {
+        window.clearInterval(slideshowTimer);
+        slideshowTimer = null;
+    }
+}
+
+function toggleSlideshow() {
+    if (slideshowTimer !== null) {
+        stopSlideshow();
+        showToast("Slideshow paused.");
+    } else {
+        startSlideshow();
+        showToast("Memories are playing ❤️");
+    }
+}
+
+/* 4. DISCOVER SURPRISE */
+
+function discoverSurprise() {
+    const secretSection = document.getElementById("secret");
+
+    if (secretSection) {
+        secretSection.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }
+
+    burstHearts();
+}
+
+/* 5. LOVE LETTER */
+
+function revealLetter() {
+    if (!loveLetter) {
+        showToast("Love letter section not found.");
+        return;
+    }
+
+    loveLetter.classList.remove("hidden");
+    loveLetter.hidden = false;
+
+    loveLetter.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+    burstHearts();
+}
+
+/* 6. SECRET SURPRISE */
+
+function revealSecret() {
+    const secretMessage =
+        document.getElementById("secretMessage");
+
+    if (secretMessage) {
+        secretMessage.classList.remove("hidden");
+        secretMessage.hidden = false;
+
+        secretMessage.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        burstHearts();
+        showToast("A little secret, just for you ❤️");
+    } else {
+        showToast("Check the secret message element ID.");
+    }
+}
+
+/* 7. MUSIC CONTROLS */
+
+async function toggleMusic() {
+    if (!backgroundMusic) {
+        showToast("The audio element was not found.");
+        return;
+    }
+
+    if (backgroundMusic.paused) {
+        try {
+            await backgroundMusic.play();
+
+            if (musicButton) {
+                musicButton.textContent =
+                    "⏸ Pause Music 🎶";
+            }
+
+            if (musicStatus) {
+                musicStatus.textContent =
+                    "Now playing for you ❤️";
+            }
+        } catch (error) {
+            if (musicStatus) {
+                musicStatus.textContent =
+                    "Music could not start. Check your MP3 file.";
+            }
+
+            showToast("Check the song file and try again.");
+        }
+    } else {
+        backgroundMusic.pause();
+
+        if (musicButton) {
+            musicButton.textContent = "▶ Play Music 🎶";
+        }
+
+        if (musicStatus) {
+            musicStatus.textContent = "Music paused.";
+        }
+    }
+}
+
+async function attemptAutoplay() {
+    if (!backgroundMusic) return;
+
+    backgroundMusic.volume = 1;
+
+    try {
+        await backgroundMusic.play();
+    } catch (error) {
+        // Browsers may block autoplay with sound.
+        if (musicStatus) {
+            musicStatus.textContent =
+                "Tap Play Music to start your song ❤️";
+        }
+    }
+}
+
+if (backgroundMusic) {
+    backgroundMusic.addEventListener("play", () => {
+        if (musicButton) {
+            musicButton.textContent = "⏸ Pause Music 🎶";
+        }
+
+        if (musicStatus) {
+            musicStatus.textContent =
+                "Your song is playing ❤️";
+        }
+    });
+
+    backgroundMusic.addEventListener("pause", () => {
+        if (musicButton) {
+            musicButton.textContent = "▶ Play Music 🎶";
+        }
+    });
+
+    backgroundMusic.addEventListener("error", () => {
+        if (musicStatus) {
+            musicStatus.textContent =
+                "Song not found. Check music/our-song.mp3.";
+        }
+    });
+}
+
+/* 8. FLOATING HEARTS */
+
+function burstHearts() {
+    const symbols = ["❤️", "💗", "💖", "💕", "✨"];
+
+    for (let i = 0; i < 14; i++) {
+        const heart = document.createElement("div");
+
+        heart.className = "floating-heart";
+
+        heart.textContent =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize =
+            (16 + Math.random() * 20) + "px";
+
+        heart.style.animationDuration =
+            (2 + Math.random() * 2) + "s";
+
+        document.body.appendChild(heart);
+
+        window.setTimeout(() => {
+            heart.remove();
+        }, 4200);
+    }
+}
+
+/* 9. TOAST NOTIFICATIONS */
+
+function showToast(message) {
+    if (!toast) {
+        console.log(message);
+        return;
+    }
+
+    toast.textContent = message;
+    toast.classList.remove("hidden");
+
+    if (toastTimer !== null) {
+        window.clearTimeout(toastTimer);
+    }
+
+    toastTimer = window.setTimeout(() => {
+        toast.classList.add("hidden");
+        toastTimer = null;
+    }, 2800);
+}
+
+/* 10. FINAL LOVE BUTTON */
+
+function sendLove() {
+    burstHearts();
+
+    showToast("A little love, just for you, Nellie ❤️");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+/* 11. START THE WEBSITE */
+
+buildGallery();
+
+if (photos.length > 0) {
+    showPhoto(0);
+}
+
+startSlideshow();
+
+if (document.readyState === "complete") {
+    attemptAutoplay();
+} else {
+    window.addEventListener(
+        "load",
+        attemptAutoplay,
+        { once: true }
+    );
+}
+</script>
+
+</body>
+</html>
+        
+
+
